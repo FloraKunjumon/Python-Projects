@@ -1,0 +1,30 @@
+class Agents:
+    def __init__(self, name, environment, sensors, actuators, performance):
+        self.name=name
+        self.environment=environment
+        self.actuators=actuators
+        self.sensors=sensors
+        self.performance=performance
+
+
+    def printInfo(self):
+        print('name %s' % self.name)
+        print('\tenvironment: %s'%self.environment)
+        print('\tsensors: %s' % self.sensors)
+        print('\tactuators: %s' % self.actuators)
+        print('\tperformance: %s' % self.performance)
+
+a = Agents('Sofia Robot' ,'Real world', ['AI','Visual data processing','facialrecognition'], ['arms', 'legs'], 'lifespan')
+a.printInfo()
+
+butter_passing_robot = Agents('Butter passing robot', 'Table',['hooks','hand','speaker'], ['camera','microphone'],['number of people on table with butter'])
+butter_passing_robot.printInfo()
+
+Alexa = Agents('Alexa','Real World','sound recognition','audio output' ,['accuracy','speed'])
+Alexa.printInfo()
+
+Touch_screen_phones= Agents('Motorola X5', 'Phone', 'Screen', 'display', 'accuracy')
+Touch_screen_phones.printInfo()
+
+Phone_Software =Agents('Pacer', 'Phone OS', 'touch sensor', '[display]', 'Accuracy')
+Pacer_App.printInfo()
