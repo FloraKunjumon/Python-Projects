@@ -1,0 +1,24 @@
+Flora Kunjumon
+9/5/2019
+Application: Problem Formulation
+Agent state: int(x) &Visited (x) Agent is at location x and Visited(x)
+Initial state:int(A) &Visited (A)
+Goal test /condition: ln(A) and Visited (A, B, C, D)
+Actions: Go(y) changes agent location of there is an edge connecting them
+Visited(y) declares y as the visited location i.e. the destination that the agent has visited
+Transition model: Result(ln(x), Go(y)=ln(y) &Visited (x, y))
+Path on cost: edge on graph
+Example:
+Agent state: In(A) &visited ()
+Actions: {Go(C), Go(D), Go(B)}
+Agent state: In(C) &Visited(C)
+Goal test: In(A)? False
+Actions: {Go(B), Go(D)} &Visited (C)
+Agent state: In(D)
+Goal test: In(A)? False
+Actions: Go(B)} &Visited (C, D)
+Agent state: ln(B)
+Goal test: ln(A)? False
+Actions: Go(A) &Visited (C, D, B)
+Agent state: ln(A)
+Goal test: ln(A)? True
