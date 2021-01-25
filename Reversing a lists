@@ -1,0 +1,145 @@
+# Question 1 Reversing a list
+def myReverse(l):
+    l.reverse()
+    return l
+
+print ("The list is reversed as: ", myReverse([5,7,5,1]));
+
+# Question 2 Find the index of the minimum number and the index of the maximum number
+
+def minmax(a,n):
+
+        minpos = a.index(min(a))
+
+        maxpos = a.index(max(a))
+
+        print ("The minimum is at position", minpos+1);
+        print ("The maximum is at position", maxpos+1);
+
+minmax ([1,2,3,0],4)
+
+#Question 3 Collect the odd numbers from the list
+
+def oddelements(t):
+    t1=[]
+    t1=[i for i in t if i%2==1]
+    return t1
+
+print("The odd elements are", oddelements([1,5,4,6,43]))
+
+#Question 4 Find the Eucledean distance
+
+def distance(alist, blist):
+    sum_of = 0
+    for x in alist:
+        for y in blist:
+            ans = (x - y)**2
+            sum_of += ans
+    return (sum_of)**(1/2)
+
+print("The Eucleadon distance is", distance([3,4,2],[4,4,1]))
+
+#Read from a file and display each line as element in the list
+
+f = open("C:/Users/Win10 User/Desktop/bloodOfJesus.txt")
+print(f.read())
+
+def readLinesFromFile(filename):
+    with open(filename) as f:
+        content = f.readlines()
+    #  remove whitespace characters like `\n` at the end of each line
+    content = [x.strip() for x in content]
+    print("The content in the file is read and it is as follows: ", content)
+
+print(readLinesFromFile("C:/Users/Win10 User/Desktop/bloodOfJesus.txt"))
+
+# Write to a file from the list
+MyList = ["New York", "London", "Paris", "New Delhi", "America"]
+MyFile=open("C:/Users/Win10 User/Desktop/bloodOfJesus.txt","w")
+
+for element in MyList:
+     MyFile.write(element)
+     MyFile.write('\n')
+MyFile.close()
+
+
+def write(file,List1):
+
+    MyFile=open(file,"w")
+    for element in List1:
+        MyFile.write(element)
+        MyFile.write('\n')
+    MyFile.close()
+
+    print(write("C:/Users/Win10 User/Desktop/bloodOfJesus.txt"),["New York", "London", "Paris", "New Delhi", "America"])
+
+#Questiion for creating a bank account Create a class titled BankAccount.
+#Create a constructor that takes an ID parameter and initial deposit amount parameter. The constructor should set an 'id' member to the ID parameter and set the 'balance' member to the initial deposit parameter.
+#Create the following methods for the BankAccount class:
+#deposit. This method should take a deposit amount parameter. Add the parameter to the 'balance' member.
+#withdraw. This method should take a withdrawal amount parameter. Subtract the parameter from the BankAccount. Make sure that the account has a balance greater than or equal to the withdrawal amount.
+#WAll methods should return the balance member.
+#Outside of the class, create two BankAccount objects.
+#Call your methods with the objects you created and print out the results.
+
+class Bank_Account:
+    def __init__(self, ID, initialAmount):
+        self.balance = initialAmount
+        print("Hello!!! Welcome to the Deposit & Withdrawal Machine. You have", initialAmount, " in your account")
+
+    def deposit(self, amount):
+
+        self.balance += amount
+        print("\n Balance after deposit of ", amount, " is", self.balance)
+        return self.balance
+
+    def withdraw(self, amount):
+
+        if self.balance >= amount:
+            self.balance -= amount
+            print("\n Balance after withdrawal of ", amount, " is", self.balance)
+            return self.balance
+        else:
+            print("\n Insufficient balance  ")
+
+    def display(self):
+        print("\n Net Available Balance=", self.balance)
+
+    # Driver code
+
+
+# creating first object of class
+s = Bank_Account('M8', 2000)
+
+# Calling functions with that class object
+print(s.deposit(3000))
+print(s.withdraw(10000))
+s.display()
+
+# second object
+u = Bank_Account('J98', 2000)
+
+# Calling functions with that class object
+print(u.deposit(2000))
+print(u.withdraw(1000))
+u.display()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
